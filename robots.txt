@@ -1,10 +1,15 @@
 User-agent: *
 Allow: /
+
+# Point to sitemap
 Sitemap: https://ivan-fr.github.io/binancebonus/sitemap.xml
 
 # Allow all bots to index the site
 User-agent: Googlebot
 Allow: /
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
 
 User-agent: Bingbot
 Allow: /
@@ -16,4 +21,4 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Crawl-delay for all bots
-Crawl-delay: 1 
+Crawl-delay: 1
