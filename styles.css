@@ -664,26 +664,27 @@ footer {
     height: 45px;
     border-radius: 4px;
     border: 1px solid rgba(240, 185, 11, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.referral-code span {
-    color: #f0b90b;
-    font-family: monospace;
-    font-size: 1rem;
-    margin-right: 0.5rem;
+.referral-code:hover {
+    border-color: #f0b90b;
+    background: rgba(12, 13, 16, 0.95);
 }
 
 .copy-button {
     background: none;
     border: none;
     color: #f0b90b;
-    cursor: pointer;
     height: 100%;
     padding: 0 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: none;
 }
 
 .copy-button:hover {

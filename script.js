@@ -172,14 +172,23 @@ document.addEventListener('DOMContentLoaded', () => {
 function copyRefCode(location = '') {
     const elementId = location === 'footer' ? 'refCodeFooter' : 'refCode';
     const code = document.getElementById(elementId).innerText;
+    
     navigator.clipboard.writeText(code).then(() => {
         // Show feedback
-        const button = document.querySelector(`#${elementId}`).nextElementSibling;
-        const originalIcon = button.innerHTML;
-        button.innerHTML = '<i class="fas fa-check"></i>';
+        const referralCode = document.getElementById(elementId).closest('.referral-code');
+        const button = referralCode.querySelector('.copy-button i');
+        const originalIcon = button.className;
         
+        // Change icon to checkmark
+        button.className = 'fas fa-check';
+        
+        // Add success state
+        referralCode.style.borderColor = '#4CAF50';
+        
+        // Reset after 2 seconds
         setTimeout(() => {
-            button.innerHTML = originalIcon;
+            button.className = originalIcon;
+            referralCode.style.borderColor = '';
         }, 2000);
     });
 } 
