@@ -1,0 +1,776 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #0c0d10;
+    color: #ffffff;
+}
+
+/* Header Styles */
+header {
+    background-color: #1e2026;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    height: 100%;
+    padding-left: 1rem;
+}
+
+.logo-text {
+    display: flex;
+    gap: 0.15rem;
+    filter: drop-shadow(0 0 10px rgba(240, 185, 11, 0.3));
+    position: relative;
+}
+
+.letter {
+    color: #f0b90b;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    text-shadow: 0 0 15px rgba(240, 185, 11, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.space {
+    width: 0.8rem;
+}
+
+.logo-line {
+    display: none;
+}
+
+.logo img {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0b90b, #f8d12f);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #0c0d10;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #1e2026;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0c0d10;
+    color: #f0b90b;
+    padding: 0.8rem 2rem;
+    height: 45px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button i {
+    margin-left: 0.5rem;
+}
+
+.cta-button:hover {
+    background-color: #f0b90b;
+    color: #0c0d10;
+    transform: translateY(-2px);
+}
+
+.hero-logo {
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+    perspective: 1200px;
+}
+
+.logo-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.logo-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0);
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+}
+
+/* Main faces */
+.logo-front {
+    transform: translateZ(30px);
+}
+
+.logo-back {
+    transform: translateZ(-30px) rotateY(180deg);
+    opacity: 0.9;
+}
+
+/* Volume sides */
+.logo-side {
+    position: absolute;
+    background: #000;
+    opacity: 0.85;
+}
+
+.logo-right,
+.logo-left {
+    width: 60px; /* This creates the depth */
+    height: 100%;
+    top: 0;
+}
+
+.logo-right {
+    right: -30px;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.logo-left {
+    left: -30px;
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.logo-top,
+.logo-bottom {
+    width: 100%;
+    height: 60px; /* This creates the depth */
+    left: 0;
+}
+
+.logo-top {
+    top: -30px;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.logo-bottom {
+    bottom: -30px;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Common styles for all faces */
+.logo-front,
+.logo-middle,
+.logo-back,
+.logo-shadow,
+.logo-left,
+.logo-right,
+.logo-top,
+.logo-bottom {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+}
+
+/* Front face */
+.logo-front {
+    transform: translateZ(60px);
+    filter: brightness(0);
+    opacity: 1;
+}
+
+/* Middle layer */
+.logo-middle {
+    transform: translateZ(30px);
+    filter: brightness(0);
+    opacity: 0.9;
+}
+
+/* Back face */
+.logo-back {
+    transform: translateZ(-60px) rotateY(180deg);
+    filter: brightness(0);
+    opacity: 0.8;
+}
+
+/* Side faces */
+.logo-left {
+    transform: rotateY(-90deg) translateZ(60px);
+    filter: brightness(0);
+    opacity: 0.85;
+    width: 120px;
+    left: -60px;
+    height: 100%;
+    background-color: #000;
+}
+
+.logo-right {
+    transform: rotateY(90deg) translateZ(60px);
+    filter: brightness(0);
+    opacity: 0.85;
+    width: 120px;
+    right: -60px;
+    height: 100%;
+    background-color: #000;
+}
+
+/* Add top and bottom faces */
+.logo-top {
+    transform: rotateX(-90deg) translateZ(60px);
+    filter: brightness(0);
+    opacity: 0.85;
+    height: 120px;
+    top: -60px;
+    background-color: #000;
+}
+
+.logo-bottom {
+    transform: rotateX(90deg) translateZ(60px);
+    filter: brightness(0);
+    opacity: 0.85;
+    height: 120px;
+    bottom: -60px;
+    background-color: #000;
+}
+
+/* Shadow effect */
+.logo-shadow {
+    transform: translateZ(-20px) rotateX(90deg);
+    filter: brightness(0) blur(8px);
+    opacity: 0.2;
+}
+
+/* Add glow effect */
+.logo-3d::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
+    filter: blur(15px);
+    z-index: -1;
+}
+
+/* Outer square - main container */
+.outer-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 4px solid #0c0d10;
+}
+
+/* Center diamond */
+.center-diamond {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 4px solid #0c0d10;
+}
+
+/* Smaller diamonds - all same size */
+.top-diamond,
+.bottom-diamond,
+.left-diamond,
+.right-diamond {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border: 4px solid #0c0d10;
+}
+
+/* Precise positioning for each diamond */
+.top-diamond {
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bottom-diamond {
+    bottom: 18%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.left-diamond {
+    left: 18%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.right-diamond {
+    right: 18%;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(45deg);
+}
+
+.quick-benefits {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2.5rem 0;
+}
+
+.benefit-tag {
+    background: rgba(12, 13, 16, 0.9);
+    border: 2px solid rgba(240, 185, 11, 0.3);
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #f0b90b;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-tag:hover {
+    transform: translateY(-5px);
+    border-color: #f0b90b;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-tag i {
+    font-size: 1.5rem;
+    color: #f0b90b;
+    background: rgba(240, 185, 11, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.benefit-tag:hover i {
+    background: rgba(240, 185, 11, 0.2);
+    transform: scale(1.1);
+}
+
+.benefit-tag span {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 4rem 2rem;
+    background-color: #1e2026;
+}
+
+.benefits h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #f0b90b;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background-color: #2b2f36;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: #f0b90b;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.referral-steps {
+    margin-top: 4rem;
+    text-align: center;
+    background-color: #2b2f36;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.referral-steps h3 {
+    color: #f0b90b;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #f0b90b;
+    color: #0c0d10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    background-color: #0c0d10;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #f0b90b;
+}
+
+.features-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #1e2026;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(10px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #f0b90b;
+    margin-right: 1.5rem;
+}
+
+.feature-text h3 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    background-color: #1e2026;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .referral-steps {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .hero-logo {
+        width: 150px;
+        height: 150px;
+        bottom: 3%;
+        right: 10%;
+    }
+    
+    .benefit-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .outer-square {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .center-diamond {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .top-diamond,
+    .bottom-diamond,
+    .left-diamond,
+    .right-diamond {
+        width: 65px;
+        height: 65px;
+    }
+} 
+
+/* Add this for smoother animations */
+.logo-container, .letter, .logo-line {
+    will-change: transform;
+    backface-visibility: hidden;
+} 
+
+/* Add a subtle gradient overlay to improve contrast */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(240, 185, 11, 0.1) 100%);
+    z-index: 1;
+} 
+
+/* Optional: Add for larger screens */
+@media (min-width: 1440px) {
+    .hero-logo {
+        width: 250px;
+        height: 250px;
+        right: 20%;
+    }
+} 
+
+/* Add these styles */
+.cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.referral-code {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(12, 13, 16, 0.9);
+    padding: 0 1rem;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid rgba(240, 185, 11, 0.3);
+}
+
+.referral-code span {
+    color: #f0b90b;
+    font-family: monospace;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    color: #f0b90b;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    color: #f8d12f;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(12, 13, 16, 0.9);
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.copy-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background: rgba(12, 13, 16, 0.9);
+}
+
+.referral-code:hover .copy-tooltip {
+    opacity: 1;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+    .cta-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .referral-code {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Update flat octahedron styles */
+.flat-octahedron {
+    position: absolute;
+    width: 120px; /* Increased size */
+    height: 120px;
+    opacity: 0.12;
+    pointer-events: none;
+    top: 120px;
+    left: 80px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
+}
+
+.diamond {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.diamond::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .flat-octahedron {
+        width: 80px;
+        height: 80px;
+        top: 100px;
+        left: 40px;
+    }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <!-- Diamond shape -->
+    <path d="M16 2l14 14-14 14L2 16z" fill="#f0b90b"/>
+    <!-- I -->
+    <path d="M11 10h2v12h-2z" fill="#1e2026"/>
+    <!-- V -->
+    <path d="M14 10l2 12 2-12h2l-3 12h-2l-3-12z" fill="#1e2026"/>
+    <!-- A -->
+    <path d="M21 22l3-12h2l-4 12h-2l1-3h1l-1-9z" fill="#1e2026"/>
+    <!-- N -->
+    <path d="M27 10v12h-2l-3-8v8h-2V10h2l3 8v-8z" fill="#1e2026"/>
+</svg> 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <!-- Diamond shape -->
+    <path d="M256 0l256 256-256 256L0 256z" fill="#f0b90b"/>
+    <!-- IVAN text -->
+    <text x="256" y="290" 
+        font-family="Arial, sans-serif" 
+        font-weight="bold" 
+        font-size="120" 
+        text-anchor="middle" 
+        fill="#1e2026">
+        IVAN
+    </text>
+</svg> 
