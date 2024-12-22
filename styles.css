@@ -775,3 +775,207 @@ footer {
         left: 40px;
     }
 }
+
+/* Update existing responsive styles and add new ones */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .letter {
+        font-size: 1.2rem;
+    }
+
+    /* Hero section adjustments */
+    .hero {
+        padding: 4rem 1rem;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Benefits tags adjustments */
+    .quick-benefits {
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+    }
+
+    .benefit-tag {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .benefit-tag i {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+        min-width: 2.4rem;
+        text-align: center;
+    }
+
+    /* CTA section adjustments */
+    .cta-section {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .referral-code {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 0.8rem;
+    }
+
+    .referral-code span {
+        font-size: 0.9rem;
+    }
+
+    /* Benefits section adjustments */
+    .benefits {
+        padding: 3rem 1rem;
+    }
+
+    .benefits h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    .benefit-card i {
+        font-size: 2rem;
+    }
+
+    .benefit-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Steps section adjustments */
+    .referral-steps {
+        padding: 2rem 1rem;
+    }
+
+    .referral-steps h3 {
+        font-size: 1.5rem;
+    }
+
+    .step p {
+        font-size: 0.95rem;
+    }
+
+    /* Features section adjustments */
+    .features {
+        padding: 3rem 1rem;
+    }
+
+    .features h2 {
+        font-size: 1.8rem;
+    }
+
+    .feature {
+        padding: 1.2rem;
+        text-align: left;
+        flex-direction: row;
+    }
+
+    .feature-icon {
+        margin: 0 1rem 0 0;
+        font-size: 1.5rem;
+    }
+
+    .feature-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 2rem 1rem;
+    }
+
+    .footer-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Logo adjustments */
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+        bottom: 2%;
+        right: 5%;
+        opacity: 0.08;
+    }
+
+    .flat-octahedron {
+        width: 60px;
+        height: 60px;
+        top: 80px;
+        left: 20px;
+    }
+}
+
+/* Add styles for very small screens */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .benefit-tag {
+        padding: 0.6rem 1rem;
+    }
+
+    .benefit-tag i {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .benefit-tag span {
+        font-size: 0.85rem;
+    }
+}
+
+/* Add styles for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        padding: 5rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .benefit-tag {
+        padding: 1rem 1.5rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
