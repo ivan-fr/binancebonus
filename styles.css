@@ -105,6 +105,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .cta-button i {
@@ -115,6 +116,8 @@ header {
     background-color: #f0b90b;
     color: #0c0d10;
     transform: translateY(-2px);
+    border: 2px solid #0c0d10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-logo {
@@ -660,77 +663,74 @@ footer {
     display: flex;
     align-items: center;
     background: rgba(12, 13, 16, 0.9);
-    padding: 0 1rem;
+    padding: 0 1.2rem;
     height: 45px;
     border-radius: 4px;
     border: 1px solid rgba(240, 185, 11, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
+    gap: 1rem;
 }
 
 .referral-code:hover {
     border-color: #f0b90b;
     background: rgba(12, 13, 16, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.referral-code span {
+    color: #f0b90b;
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .copy-button {
     background: none;
     border: none;
     color: #f0b90b;
-    height: 100%;
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     cursor: pointer;
-    pointer-events: none;
 }
 
-.copy-button:hover {
-    color: #f8d12f;
+.copy-button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
 }
 
-.copy-tooltip {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(12, 13, 16, 0.9);
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    white-space: nowrap;
+.referral-code:hover .copy-button i {
+    transform: scale(1.1);
 }
 
-.copy-tooltip::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    width: 8px;
-    height: 8px;
-    background: rgba(12, 13, 16, 0.9);
+/* Update CTA section layout */
+.cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 2rem;
 }
 
-.referral-code:hover .copy-tooltip {
-    opacity: 1;
-}
-
-/* Update responsive styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .cta-section {
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
     }
-    
+
     .referral-code {
         width: 100%;
-        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .referral-code span {
+        font-size: 0.9rem;
     }
 }
 
